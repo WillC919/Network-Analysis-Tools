@@ -1,0 +1,20 @@
+My code creates a directory/mapping for each sender's port that has started a handshake
+I used this mapping to help store a lot of information like SEQ & ACK number, RTT, congestion window size, etc., and for temporary values for estimation purposes.
+
+When reading the packet with the flags SYN ACK, my program used its timestamp and subtracted with the timestamp of its respective SYN 
+to estimate the RTT of each respective sender's port to the receiver's port
+
+I estimated the throughput by adding up all the bytes sent from the first packet sent to its last packet sent by the senders' respective ports.
+I also kept track of the time at which it sent its first packet and kept updating the end time till it reached its last packet.
+Used the total bytes sent over the period it was sending these bytes to get my throughput
+
+I estimated the congestion window size by counting the number of the packet sent by the sender within each sender's respective port's RTT.
+
+I measured the retransmission by taking the latest ACK number from the receiver and the first time the same number on its SEQ was sent by the sender.
+Then kept track of how many times the same ACK number was repeated by the receiver till a new ACK number was sent by the receivers to the respective senders' port.
+When my program read a packet that was sent by the sender with the same SEQ number to the ACK number that was currently being kept track of, 
+	It first measured the current time to the time the sender first sent this same SEQ number stored in its respective mapping. 
+	If it was greater than twice its respective RTT then retransmission due to time out was incremented
+	else if the same ACK number was repeated more than twice then it is considered triple ACK.
+
+

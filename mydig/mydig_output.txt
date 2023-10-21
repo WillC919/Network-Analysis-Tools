@@ -1,0 +1,30 @@
+Expected Input:
+
+python mydig.py
+
+Enter Domain: www.apple.com
+
+
+
+
+Excpected Output:
+
+QUESTION SECTION: 
+www.apple.com. IN A
+
+ANSWER SECTION:
+www.apple.com. 20 IN A 184.29.132.223
+
+Query time: 151 ms
+WHEN: Tue Feb 21 13:47:43 2023
+
+
+
+
+If unable to resolve the given input than it'll print:
+
+
+QUESTION SECTION: 
+www.apple.com. IN A
+
+ERROR! UNABLE TO FETCH IP OF "www.apple.com"!!!

@@ -1,0 +1,20 @@
+Libraries Needed:
+dpkt
+
+Open the command prompt or other equivalent terminal here
+Run the command:
+
+	python analysis_pcap_tcp.py
+
+It should tell you to "Enter filename: "
+You should enter the name of the pcap file with .pcap after it
+to get program results
+
+Example:
+
+	C:\...\lee-william-assignment2> python analysis_pcap_tcp.py
+	Enter filename: assignment2.pcap
+
+	>> program results get displayed
+
+The pcap file must be inside the folder where the python file is else you'll have to type in the necessary path that leads that python file to the pcap file in the "Enter filename:" input
